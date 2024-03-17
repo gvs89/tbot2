@@ -2,4 +2,13 @@ import requests
 
 
 def fox():
-    url = ""
+    url = 'https://perchance.org/random-vehicle-gen/'
+    response = requests.get(url)
+    if response.status_code:
+        data = response.json()
+    return data.get('image')
+
+
+if __name__ == '__main__':
+    fox()
+    
